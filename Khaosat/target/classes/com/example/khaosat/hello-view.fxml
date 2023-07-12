@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.khaosat.HelloController" fx:id="survey">
+    <Label textAlignment="CENTER" text="Khao Sat Thong Tin"/>
+    <HBox>
+        <Label text="Name"/>
+        <TextField fx:id="name"/>
+        <HBox>
+            <Label text="      "/>
+            <RadioButton selected="true" text="Male" fx:id="male">
+                <toggleGroup>
+                    <ToggleGroup fx:id="sex"/>
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton text="Female" toggleGroup="$sex" fx:id="female"/>
+            <RadioButton text="Other" toggleGroup="$sex" fx:id="other"/>
+        </HBox>
+    </HBox>
+    <HBox>
+        <Label text="Age"/>
+        <TextField prefWidth="50" fx:id="age"/>
+        <Label text="       "/>
+        <Label text="Address"/>
+        <TextField fx:id="address"/>
+    </HBox>
+    <Button text="Submit" onAction="#saveInfo"/>
+</VBox>
